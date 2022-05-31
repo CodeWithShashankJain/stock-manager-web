@@ -343,8 +343,8 @@ router.patch(
     .not()
     .isEmpty()
     .withMessage("stock cannot be undefined")
-    .isInt({ gt: 0 })
-    .withMessage("stock should be of type number and should be more than zero")
+    .isInt()
+    .withMessage("stock should be of type number")
     .trim()
     .custom(async (value, { req }) => {
       const item = await Item.findOne(
